@@ -1,0 +1,24 @@
+﻿body {
+    background-image: url('../img/backg.jpg');
+}
+h1{
+    color:orangered;
+    text-align:center;
+    
+
+}
+h2{
+    color:black;
+    text-align:right;
+    font-family:, fantasy;
+    
+}
+a {
+    color:darkorange;
+    background-color:deeppink;
+    
+
+}
+h3 {
+    color:orangered;
+}

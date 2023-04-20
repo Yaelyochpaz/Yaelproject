@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>TV.RECOMMENDED</title>
+    <link rel="icon" href="img/TVV.ico" />
+    <link rel="stylesheet" href="style/StyleSheet.css" />
+    <link rel="stylesheet" href="style/navbar.css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   <form>
+     <div class="navbar">
+        <a href="homepage.aspx">דף הבית</a>
+        <a href="signup.aspx">הרשמה</a>
+        <a href="login.aspx">כניסה</a>
+        <a href="recover.aspx">שחזור סיסמא</a>         
+        <li runat="server" id="update"><a href="Update.aspx">עדכן משתמש</a></li>
+        <a href="websites.aspx">אתרים לצפייה</a>
+        <a href="mustviews.aspx">הסדרות הכי נצפות</a>
+        <a href="mustviewsfilms.aspx">הסרטים הכי נצפים</a>
+        <li runat="server" id="adminPage"><a href="admin.aspx">Admin</a></li>
+        <li runat ="server" id="Admin2Page"><a href="Admin2.aspx">Admin2</a></li>
+        <div class="subnav">
+            <button class="subnavbtn">סדרות מומלצות <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="friends.aspx">Friends</a>
+                <a href="gilmorgirls.aspx">Gilmor Girls</a>
+                <a href="tvd.aspx">The vampire diaries</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">סרטים מומלצים <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="charlichocolate.aspx">Charli and the chocolate factory</a>
+                <a href="thegreatgatsby.aspx">The great Gatsby</a>
+                <a href="thenotebook.aspx">The notebook</a>
+                <a href="Clueless.aspx">Cluless</a>
+            </div>
+        </div>
+           <a style="float:left" href="Logout.aspx">יציאה</a>
+    </div>
+       </form>
+        <%
+             string helloMessage = Message();
+        Response.Write("<p style=\"color:orangered;font-style:italic;font-weight:400\">" + helloMessage + "</p>");
+        %>
+        <footer>
+        <%
+            Response.Write("<p style=\"color:orangered\">Current users in web site is " + Application["currentVisitors"] + "</p>");
+        %>
+        
+        </footer>
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+  
+    </>
+</body>
+</html>
